@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leverage AI | Intelligent Automation for African Businesses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #202020;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .logo, .nav-links a, .btn {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Color Variables */
+        :root {
+            --gold: #C8A134;
+            --charcoal: #202020;
+            --light-gray: #E0E0E0;
+            --white: #FFFFFF;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: var(--charcoal);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .logo span {
+            font-weight: 400;
+            color: var(--white);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--charcoal);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--charcoal);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--charcoal) 0%, #2a2a2a 100%);
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 16px;
+        }
+
+        .hero .gold {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 32px;
+            opacity: 0.9;
+        }
+
+        .hero-badge {
+            background: rgba(200, 161, 52, 0.15);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 14px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(200, 161, 52, 0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 48px;
+            color: var(--charcoal);
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin: 16px auto 0;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--light-gray);
+            padding: 32px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--charcoal);
+        }
+
+        .service-card p {
+            color: #555;
+            margin-bottom: 24px;
+        }
+
+        .service-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* Founder Section */
+        .founder {
+            background: var(--light-gray);
+        }
+
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .founder-image {
+            background: linear-gradient(135deg, var(--gold) 0%, #a07d28 100%);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .founder-image-placeholder {
+            font-size: 80px;
+        }
+
+        .founder h3 {
+            font-size: 32px;
+            color: var(--charcoal);
+            margin-bottom: 8px;
+        }
+
+        .founder-title {
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .founder-quote {
+            font-style: italic;
+            font-size: 20px;
+            border-left: 4px solid var(--gold);
+            padding-left: 20px;
+            margin: 24px 0;
+        }
+
+        /* Success Story */
+        .success {
+            background: var(--charcoal);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .success-number {
+            font-size: 72px;
+            font-weight: 800;
+            color: var(--gold);
+        }
+
+        .success-label {
+            font-size: 20px;
+            margin-bottom: 24px;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .contact-item {
+            padding: 24px;
+            background: var(--light-gray);
+            border-radius: 8px;
+        }
+
+        .contact-item .label {
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--white);
+            text-align: center;
+            padding: 32px 0;
+            border-top: 1px solid rgba(200,161,52,0.2);
+        }
+
+        /* Coming Soon Banner */
+        .coming-soon {
+            background: linear-gradient(90deg, var(--gold) 0%, #a07d28 100%);
+            color: var(--charcoal);
+            text-align: center;
+            padding: 48px 0;
+            border-radius: 16px;
+            margin-top: 48px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .founder-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .section-title { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <a href="#" class="logo">LEVERAGE <span>AI</span></a>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#founder">Founder</a>
+            <a href="#success">Success</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">✨ Architecting Business Leverage Across Africa</div>
+            <h1>Empowering African Businesses with <span class="gold">Intelligent Automation</span></h1>
+            <p>Transform your operations with AI-driven solutions. Reduce costs, eliminate errors, and scale smarter.</p>
+            <a href="#contact" class="btn btn-primary">Get Started →</a>
+            <a href="#services" class="btn btn-outline" style="margin-left: 16px;">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Core Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Process Automation</h3>
+                    <p>Automate repetitive tasks and streamline your workflows for greater efficiency. Reduce manual errors, save time, and scale your operations seamlessly.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Data Analytics</h3>
+                    <p>Unlock actionable insights from your data to drive smarter business decisions. Transform raw data into strategic advantages.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧠</div>
+                    <h3>AI Solutions</h3>
+                    <p>Leverage advanced AI to optimize and grow your enterprise. From predictive modeling to intelligent assistants — we build the future of your business.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder -->
+    <section id="founder" class="founder">
+        <div class="container">
+            <div class="founder-grid">
+                <div class="founder-image">
+                    <div class="founder-image-placeholder">👨🏾‍💻</div>
+                </div>
+                <div>
+                    <h3>Precious</h3>
+                    <div class="founder-title">Founder & Lead Architect</div>
+                    <div class="founder-quote">"Driving intelligent automation to empower African enterprises."</div>
+                    <p>Precious is the visionary behind Leverage AI. With a passion for innovation and technology, he built Leverage AI to transform how African businesses operate through intelligent automation. His mission is to unlock new levels of efficiency and growth across the continent.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Story -->
+    <section id="success" class="success">
+        <div class="container">
+            <div class="success-number">95%</div>
+            <div class="success-label">Reduction in Manual Processes</div>
+            <p style="max-width: 600px; margin: 0 auto 32px;">Learn how we transformed operations for a leading African enterprise — saving hundreds of hours monthly and eliminating costly human errors.</p>
+            <a href="#" class="btn btn-primary">Read the Full Story →</a>
+        </div>
+    </section>
+
+    <!-- Coming Soon -->
+    <div class="container">
+        <div class="coming-soon">
+            <h3 style="margin-bottom: 8px;">🚀 Exciting Announcement on the Horizon!</h3>
+            <p style="margin-bottom: 0;">Stay tuned for something groundbreaking from Leverage AI.</p>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="label">📧 Email</div>
+                    <div>leverageai84@gmail.com</div>
+                </div>
+                <div class="contact-item">
+                    <div class="label">📍 Location</div>
+                    <div>Uyo, Nigeria</div>
+                </div>
+                <div class="contact-item">
+                    <div class="label">🌐 Website</div>
+                    <div>www.leverageai.com</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Leverage AI — Architecting Business Leverage Across Africa</p>
+    </div>
+</footer>
+
+</body>
+</html>
